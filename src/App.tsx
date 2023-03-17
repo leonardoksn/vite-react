@@ -1,20 +1,7 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import { RouterProvider } from 'react-router-dom';
 
-export function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
+import router from './routes/index.routes';
 
-export function WrappedApp() {
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
+export default function WrappedApp() {
+  return <RouterProvider router={router} />;
 }
